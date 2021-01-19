@@ -7,6 +7,8 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-btns')
 let shuffledQuestions, currentQuestionIndex
+
+var secondsLeft = 100;
 //const answerContainer = answerContainers[questionNumber];
 //const selector = `input[name=question${questionNumber}]:checked`;
 //const userAnswer = (answerContainer.querySelector(selector) || {}).value;
@@ -49,7 +51,7 @@ const myQuestions = [
 // Starting point, button will be pressed to start quiz
 // inlcude submit button 
 // startButton.addEventListener('click', startQuiz);
-startButton.addEventListener('click', startQuiz, setTime);
+startButton.addEventListener('click', startQuiz);
 
 function startQuiz(){
   console.log('begin');
@@ -73,11 +75,12 @@ function setTime() {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function to create and append image
-      sendMessage();
+      
     }
 
   }, 1000);
 }
+setTime();
 
 
 function setNextQuestion(){
@@ -86,11 +89,20 @@ function setNextQuestion(){
 
 function showQuestion(question) {
 questionElement.innerText = question.question
+question.answers.forEach( answer => {
+  const button = document.createElement('button')
+  button.innerText = answer.text
+  button.classList.add('btn')
+  if (answer.correct) {
+    button.dataset.correct = answer.correct
+  }
+  button.addEventListener('click', selectAnswer)
+})
 }
 
 
 
-
+submitButton.addEventListener('click', showResults);
 function showResults(){}
 
 // display quiz right away
@@ -100,7 +112,7 @@ function showResults(){}
 
 
 // on submit, show results
-submitButton.addEventListener('click', showResults);
+
 
 
 //GIVEN I am taking a code quiz
