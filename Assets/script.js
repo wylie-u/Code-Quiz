@@ -77,8 +77,9 @@ let myQuestions = [
 ];
 
 let lastQuestion = myQuestions.length - 1;
-let runningQuestion = 0;
-
+let runningQuestion = myQuestions[0]
+console.log(runningQuestion);
+console.log(runningQuestion.question);
 // // Starting point, button will be pressed to start quiz
 // // inlcude submit button 
 // // startButton.addEventListener('click', startQuiz);
@@ -87,7 +88,7 @@ startButton.addEventListener('click', startQuiz);
 
 function startQuiz(){
     console.log('begin');
-     startButton.style.display ="none";
+     startButton.style.display = "none";
      questionContainerElement.style.display = "block";
      // shuffledQuestions = myQuestions.sort(() => Math.random())
      setTime();
@@ -113,18 +114,23 @@ function setTime() {
     }, 1000);
   }
 
+  // for loop 
 
   //function to load set of questions 
 
 function renderQuestion(){
+
+  console.log(myQuestions[runningQuestion].question);
     let q = myQuestions[runningQuestion];
-    myQuestions.innerHTML = "<p>" + q.question + "</p>";
+    //grab div id of question
+    document.getElementById('question').innerHTML = "<p>" + myQuestions[runningQuestion] + "</p>";
+  
     console.log('test');
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
     choiceD.innerHTML = q.choiceD;
-
+    
 
 }
 
@@ -137,7 +143,7 @@ function renderQuestion(){
     //   answerIsCorrect();
     }else{
       // answer is wrong
-      
+      // countdown 10 seconds
     //   answerIsWrong();
     }
     count = 0;
