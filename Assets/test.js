@@ -1,7 +1,7 @@
 var timeEl = document.querySelector(".time");
 const startButton = document.getElementById('start-btn');
 const resultsContainer = document.getElementById('resultsContainer');
-const submitButton = document.getElementById('submit');
+const submitButtonElement = document.getElementById('submit');
 const questionContainerElement = document.getElementById('questions-container')
 const questionElement = document.getElementById('question')
 const choicesElement = document.getElementById('choices')
@@ -9,6 +9,7 @@ const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 const option3 = document.getElementById("option3");
 const option4 = document.getElementById("option4");
+var highScoresElement = document.getElementById('highscores');
 
 const ptag = document.getElementById('paragraph');
 
@@ -85,11 +86,13 @@ let myQuestions = [
 
         C: "Computer Style Sheets",
 
-        D: "Creative Style Sheets"
+        D: "Creative Style Sheets",
+
+        correctAnswer: "B"
 
       },
 
-      correctAnswer: "B"
+      
 
     }
     
@@ -113,11 +116,13 @@ function startQuiz(){
     console.log('begin');
      startButton.style.display = "none";
      questionContainerElement.style.display = "block";
-     ptag.style.display = "none";
+    ptag.style.display = "none";
      
      // shuffledQuestions = myQuestions.sort(() => Math.random())
+     highScoresElement.setAttribute("style", "display:block;")
      setTime();
      renderQuestion();
+     
    
    }
 
@@ -146,12 +151,13 @@ function setTime() {
   function renderQuestion(){
     let q = myQuestions[runningQuestion];
     const correctAnswer = []
-
+    
     for (var i = 0; i < myQuestions.length; i++){
-      option1.innerHTML = myQuestions[runningQuestion].choices.A;
-      option2.innerHTML = myQuestions[runningQuestion].choices.B;
-      option3.innerHTML = myQuestions[runningQuestion].choices.C;
-      option4.innerHTML = myQuestions[runningQuestion].choices.D;
+      console.log(myQuestions[runningQuestion].choices.A);
+      option1.textContent = myQuestions[runningQuestion].choices.A;
+      option2.textContent = myQuestions[runningQuestion].choices.B;
+      option3.textContent = myQuestions[runningQuestion].choices.C;
+      option4.textContent = myQuestions[runningQuestion].choices.D;
       console.log('test');
     }
    
@@ -172,9 +178,10 @@ function setTime() {
 }
 
   function checkAnswer(answer){
-    if( answer == myQuestions[runningQuestion].choices.correctAnswer){
+    if( answer === myQuestions[runningQuestion].choices.correctAnswer){
       // answer is correct
       score = score +10;
+      
      
       console.log('test');
       //move to next question
@@ -192,12 +199,17 @@ function setTime() {
     }else{
       // end the quiz and show the score
       clearInterval();
+      console.log();
+      highScores()
       
       
     }
   }
 
   function highScores(){
-    const score = score.myQuestions.length;
-    console.log(score);
+    score = score;
+    window.location.href = "final.html"
+
+  
+
   }

@@ -101,4 +101,10 @@ p{
 #option4{
     justify-content: center;
     cursor: pointer;
+
+
+}
+
+#highscores {
+    display: none;
 }
