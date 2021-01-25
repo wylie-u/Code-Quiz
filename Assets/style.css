@@ -83,12 +83,22 @@ p{
     display: inline-block;
     width: 100px;
     text-align: center;
+    align-items: center;
     border : 1px solid grey;
     border-radius: 5px;
-    cursor: pointer;
+    /* cursor: pointer; */
     padding : 5px;
     margin-left: auto;
     font-size: 13px;
 
     
+}
+
+
+#option1,
+#option2,
+#option3,
+#option4{
+    justify-content: center;
+    cursor: pointer;
 }

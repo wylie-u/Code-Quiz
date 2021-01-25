@@ -4,6 +4,7 @@ const resultsContainer = document.getElementById('resultsContainer');
 const submitButton = document.getElementById('submit');
 const questionContainerElement = document.getElementById('questions-container')
 const questionElement = document.getElementById('question')
+const choicesElement = document.getElementById('choices')
 const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 const option3 = document.getElementById("option3");
@@ -23,72 +24,79 @@ let myQuestions = [
 
         question : "What does HTML stand for?",
         
-        choices: [
-
-        { text: "Hypertext Markup Language",correct: true},
+        choices: {
         
-        { text: "Home Tool Markup Language", correct: false}, 
+        A: "Hypertext Markup Language",
+        
+        B: "Home Tool Markup Language",
        
-        { text: "Hyperlinks and Text Markup Language", correct: false}, 
+        C: "Hyperlinks and Text Markup Language",
         
-        { text: "Hypertools Marker Language", correct: false}, 
-        
+        D: "Hypertools Marker Language",
 
-      ]
+        correctAnswer: "A"
+
+        }
 
     },{
 
         question : "Which of these elements is used for the largest heading?",
-        
-        choices: [
 
-        { text: "<h6>", correct: false}, 
+        choices: {
         
-        { text: "<head>", correct: false}, 
+          A: "<h6>",
+          
+          B: "<head>",
+         
+          C: "<h1>",
+          
+          D: "<heading>",
+  
+          correctAnswer: "C"
+  
+          }
         
-        { text: "<h1>", correct: true}, 
-       
-        { text: "<heading>", correct: false}, 
-        
-        ]
-
     },{
 
         question : "How can you make a numbered list?",
         
-        choices: [
+        choices: {
         
-        { text: "<dl>",correct: false },
+        A: "<dl>",
         
-        { text: "<ul>",correct: false },
+        B: "<ul>",
        
-        { text: "<list>",correct: false },
+        C: "<list>",
         
-        { text: "<ol>",correct: true },
+        D: "<ol>",
 
-        ]
+        correctAnswer: "D"
 
+        }
 
     }, {
         question: "What does CSS stand for?",
         
-        choices: [
+        choices: {
 
-        { text: "Colorful Style Sheets",correct: false },
+        A: "Colorful Style Sheets",
 
-        { text: "Cascading Style Sheets", correct: true}, 
+        B: "Cascading Style Sheets",
 
-        { text: "Computer Style Sheets", correct: false},
+        C: "Computer Style Sheets",
 
-        { text: "Creative Style Sheets", correct: false}
+        D: "Creative Style Sheets"
 
-        ]
-      
+      },
+
+      correctAnswer: "B"
 
     }
     
 ];
-console.log(myQuestions[0].choices);
+
+// console.log(correctAnswer);
+
 
 const lastQuestion = myQuestions.length - 1;
  // add 1 everytime an answer is selected, update
@@ -137,41 +145,44 @@ function setTime() {
 
   function renderQuestion(){
     let q = myQuestions[runningQuestion];
-    // if(runningQuestion < myQuestions.length - 1) {
+    const correctAnswer = []
 
-    // }
-    // console.log('test');
-    for (var i = 0; i > myQuestions.length; i++){
-      console.log(myQuestions);
+    for (var i = 0; i < myQuestions.length; i++){
+      option1.innerHTML = myQuestions[runningQuestion].choices.A;
+      option2.innerHTML = myQuestions[runningQuestion].choices.B;
+      option3.innerHTML = myQuestions[runningQuestion].choices.C;
+      option4.innerHTML = myQuestions[runningQuestion].choices.D;
+      console.log('test');
     }
-    
+   
     document.getElementById("question").innerHTML = "<p>"+ q.question +"</p>";
-    console.log('question');
-    // question.choices.forEach(element => {
-    //   if (choices.correct) {
-        
-    //   }
-    // });
-
+    question.innerHTML = "<p>"+ q.question +"</p>";
+    // option1.innerHTML = myQuestions[runningQuestion].choices.A;
+    // option2.innerHTML = myQuestions[runningQuestion].choices.B;
+    // option3.innerHTML = myQuestions[runningQuestion].choices.C;
+    // option4.innerHTML = myQuestions[runningQuestion].choices.D;
+    
+  // for each question...
   
-    // option1.innerHTML = q[0].choices[0];
-    // console.log(option1);
-    // option2.innerHTML = q.question.choices;
-    // option3.innerHTML = q.question.choices;
-    // option4.innerHTML = q.question.choices;
+
+      // add this question and its answers to the output
+    
+  // finally combine our output list into one string of HTML and put it on the page
   
 }
 
   function checkAnswer(answer){
-    if( answer == myQuestions[runningQuestion].correct){
+    if( answer == myQuestions[runningQuestion].choices.correctAnswer){
       // answer is correct
       score = score +10;
+     
+      console.log('test');
       //move to next question
       
     //   answerIsCorrect();
     }else{
-      // answer is wrong
-      // countdown 10 seconds
+        secondsLeft -= 10;
+      console.log('wrong');
     //   answerIsWrong();
     }
     count = 0;
@@ -182,5 +193,11 @@ function setTime() {
       // end the quiz and show the score
       clearInterval();
       
+      
     }
-    }
+  }
+
+  function highScores(){
+    const score = score.myQuestions.length;
+    console.log(score);
+  }
