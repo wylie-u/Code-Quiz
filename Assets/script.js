@@ -23,73 +23,67 @@ let myQuestions = [
 
         question : "What does HTML stand for?",
         
-        choices: {
+        choices: [
 
-        A: "Hypertext Markup Language",
+        { text: "Hypertext Markup Language",correct: true},
         
-        B: "Home Tool Markup Language",
+        { text: "Home Tool Markup Language", correct: false}, 
        
-        C: "Hyperlinks and Text Markup Language",
+        { text: "Hyperlinks and Text Markup Language", correct: false}, 
         
-        D: "Hypertools Marker Language"
+        { text: "Hypertools Marker Language", correct: false}, 
         
-      }, 
-      correct: "A"
+
+      ]
 
     },{
 
-        question : "What does HTML stand for?",
+        question : "Which of these elements is used for the largest heading?",
         
-        choices: {
+        choices: [
 
-        A: "<h6>",
+        { text: "<h6>", correct: false}, 
         
-        B: "<head>",
+        { text: "<head>", correct: false}, 
+        
+        { text: "<h1>", correct: true}, 
        
-        C: "<h1>",
+        { text: "<heading>", correct: false}, 
         
-        D: "<heading>"
-        
-      }, 
-
-      correct: "C"
+        ]
 
     },{
 
-        question : "What does HTML stand for?",
+        question : "How can you make a numbered list?",
         
-        choices: {
-
-        A: "<dl>",
+        choices: [
         
-        B: "<ul>",
+        { text: "<dl>",correct: false },
+        
+        { text: "<ul>",correct: false },
        
-        C: "<list>",
+        { text: "<list>",correct: false },
         
-        D: "<ol>"
-        
-      }, 
+        { text: "<ol>",correct: true },
 
-      correct: "D"
+        ]
 
 
     }, {
-       
-        question : "What does HTML stand for?",
+        question: "What does CSS stand for?",
         
-        choices: {
+        choices: [
 
-        A: "Colorful Style Sheets",
-        
-        B: "Cascading Style Sheets",
-       
-        C: "Computer Style Sheets",
-        
-        D: "Creative Style Sheets"
-        
-      }, 
+        { text: "Colorful Style Sheets",correct: false },
 
-      correct: "B"
+        { text: "Cascading Style Sheets", correct: true}, 
+
+        { text: "Computer Style Sheets", correct: false},
+
+        { text: "Creative Style Sheets", correct: false}
+
+        ]
+      
 
     }
     
@@ -160,11 +154,11 @@ function setTime() {
     // });
 
   
-    option1.innerHTML = q[0].choices[0];
-    console.log(option1);
-    option2.innerHTML = q.question.choices;
-    option3.innerHTML = q.question.choices;
-    option4.innerHTML = q.question.choices;
+    // option1.innerHTML = q[0].choices[0];
+    // console.log(option1);
+    // option2.innerHTML = q.question.choices;
+    // option3.innerHTML = q.question.choices;
+    // option4.innerHTML = q.question.choices;
   
 }
 
