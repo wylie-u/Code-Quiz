@@ -210,6 +210,4 @@ function setTime() {
     score = score;
     window.location.href = "final.html"
 
-  
-
   }

@@ -206,10 +206,10 @@ function setTime() {
     }
   }
 
-  function highScores(){
-    score = score;
-    window.location.href = "final.html"
+  // function highScores(){
+  //   score = score;
+  //   window.location.href = "final.html"
 
   
 
-  }
+  // }
