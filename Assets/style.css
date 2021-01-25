@@ -7,19 +7,30 @@ body{
         font-size: 16px;
         font-family:Arial, Helvetica, sans-serif;
         display: block;
+        
 }
 
 nav{
     margin-bottom: 20px;
 }
+
+
+h1{
+   text-align: center;
+
+}
 #start-btn{
-    
+    position: relative;
     align-items: center;
     display: flex;
     justify-content: center;
     margin: auto;
+    top:50%;
     
-    
+}
+
+p{
+    text-align:center;
 }
 #container{
     margin : 20px auto;
@@ -51,12 +62,13 @@ nav{
 
 #questions-container{
         position: relative;
-        width: 600px;
+        width: 700px;
         height : 400px;
-        margin-top: 20px;
+        margin-top: 30px;
         margin-right: auto;
         margin-left: auto;
-        border : 3px solid grey;
+        border : 3px solid rgb(49, 39, 185);
+        
         
 }
 
@@ -64,7 +76,6 @@ nav{
     position: relative;
     width : 460px;
     margin: auto;
-    top : 160px; 
     padding : 10px
 }
 

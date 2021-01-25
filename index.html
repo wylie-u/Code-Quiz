@@ -19,25 +19,35 @@
       <header>
          <nav class="navbar navbar-light bg-light">
             <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1" style="justify-content: center;">Javascript Quiz Game</span>
+            <span class="navbar-brand mb-0 h1"></span>
             <a id="highscores" href="">View Highscores</a>
-            <div class="time" style="text-align:center; justify-content: right;" class="timer_sec">60</div>
         </nav>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <div class="time"  class="timer_sec">Timer: 60</div>
+          </li>
       </header>
       
 
       <div class="quiz-container">
           <div class="row"></div>
           <div class="col-xl-6"></div>
+          <h1>JAVASCRIPT QUIZ!</h1>
+          <section>
+            <p id="paragraph">Test your Coding Knowledge!</p>
+          </section>
           <button id="start-btn">Start Quiz</button>
-          <div id="questions-container" style="display: none">
+          <div id="questions-container" style="display: none;">
           <div id="question"></div>
           <div id="choices">
-              <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-              <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-              <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-              <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+            <ul class="list-group">
+              <li class="list-group-item" id="option1" onclick="checkAnswer('option1')"></li>
+              <li class="list-group-item" id="option2" onclick="checkAnswer('option2')"></li>
+              <li class="list-group-item" id="option3" onclick="checkAnswer('option3')"></li>
+              <li class="list-group-item" id="option4" onclick="checkAnswer('option4')"></li>
+            </ul>
           </div>
+          
 
         </div>
         
@@ -49,6 +59,8 @@
         <button id="submit" style="display: none">Submit</button> 
   
         <div id="resultsContainer" style="display: none"></div>
+
+        
   
         
   
